@@ -1,0 +1,119 @@
+/* ── General ── */
+body {
+  background-color: #f4f6f9;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ── Stat cards ── */
+.stat-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1) !important;
+}
+.stat-icon {
+  min-width: 52px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Timeline ── */
+.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 1.1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #dee2e6;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+.timeline-icon {
+  position: absolute;
+  left: -2.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  color: #fff;
+  z-index: 1;
+}
+.timeline-icon.consulta   { background-color: #0d6efd; }
+.timeline-icon.gmnf       { background-color: #6f42c1; }
+.timeline-icon.exame      { background-color: #198754; }
+.timeline-icon.terapeutica{ background-color: #fd7e14; }
+
+.timeline-card {
+  border-left: 3px solid #dee2e6;
+  padding: .75rem 1rem;
+  background: #fff;
+  border-radius: .375rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.07);
+  transition: box-shadow .15s;
+}
+.timeline-card:hover {
+  box-shadow: 0 3px 10px rgba(0,0,0,.1);
+}
+.timeline-card.consulta   { border-left-color: #0d6efd; }
+.timeline-card.gmnf       { border-left-color: #6f42c1; }
+.timeline-card.exame      { border-left-color: #198754; }
+.timeline-card.terapeutica{ border-left-color: #fd7e14; }
+
+/* ── Alert priority badges ── */
+.badge-critica  { background-color: #dc3545 !important; }
+.badge-alta     { background-color: #fd7e14 !important; }
+.badge-media    { background-color: #ffc107 !important; color: #212529 !important; }
+.badge-baixa    { background-color: #20c997 !important; }
+
+.alert-critica  { border-left: 4px solid #dc3545; background: #fff5f5; }
+.alert-alta     { border-left: 4px solid #fd7e14; background: #fff8f0; }
+.alert-media    { border-left: 4px solid #ffc107; background: #fffdf0; }
+.alert-baixa    { border-left: 4px solid #20c997; background: #f0fff8; }
+
+/* ── Consent status badge ── */
+.consent-active  { color: #198754; font-weight: 600; }
+.consent-missing { color: #dc3545; font-weight: 600; }
+
+/* ── Patient list row ── */
+.patient-row {
+  cursor: pointer;
+  transition: background .1s;
+}
+.patient-row:hover { background-color: #f0f4ff; }
+
+/* ── Suggestion card ── */
+.suggestion-card {
+  border: 1px solid #dee2e6;
+  border-radius: .375rem;
+  padding: .75rem 1rem;
+  background: #fff;
+  margin-bottom: .75rem;
+}
+.suggestion-card .source-badge {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* ── Misc ── */
+.btn-outline-purple {
+  color: #6f42c1;
+  border-color: #6f42c1;
+}
+.btn-outline-purple:hover {
+  background-color: #6f42c1;
+  color: #fff;
+}
