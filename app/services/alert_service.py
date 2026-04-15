@@ -48,7 +48,7 @@ def generate_alerts_for_patient(db: Session, patient_id: int) -> list:
                 patient_id=patient_id,
                 tipo_alerta="perda_seguimento",
                 prioridade="alta",
-                titulo=f"Paciente sem consulta há mais de 12 meses",
+                titulo=f"Doente sem consulta há mais de 12 meses",
                 descricao=(
                     f"Último registo de consulta: {last_consulta.data_consulta if last_consulta else 'Nenhum'}"
                 ),

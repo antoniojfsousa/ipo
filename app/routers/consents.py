@@ -6,6 +6,11 @@ from app.database import get_db
 router = APIRouter(tags=["consents"])
 
 
+def _check_patient(db: Session, patient_id: int):
+    if not db.query(models.Patient).filter(models.Patient.id == patient_id).first():
+        raise HTTPException(status_code=404, detail="Paciente não encontrado")
+
+
 @router.get("/api/patients/{patient_id}/consents", response_model=list[schemas.InformedConsentResponse])
 def list_consents(patient_id: int, db: Session = Depends(get_db)):
     _check_patient(db, patient_id)
@@ -46,8 +51,3 @@ def get_current_consent(patient_id: int, db: Session = Depends(get_db)):
     if not consent:
         raise HTTPException(status_code=404, detail="Nenhum consentimento ativo")
     return consent
-
-
-def _check_patient(db: Session, patient_id: int):
-    if not db.query(models.Patient).filter(models.Patient.id == patient_id).first():
-        raise HTTPException(status_code=404, detail="Paciente não encontrado")
